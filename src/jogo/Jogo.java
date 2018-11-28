@@ -62,14 +62,47 @@ public class Jogo {
                     jogada++;
                 }
                 // imprimir tabuleiro
+                
                 for (int i=0;i<jogoVelha.length;i++){
                     for(int j=0;j<jogoVelha[i].length;j++){
-                        System.out.println(jogoVelha[i][j]+"");
+                        System.out.print(jogoVelha[i][j]+"[]-");
                     }
                     System.out.println();
                     
                 }
+                //verificar se te ganhador 
                 
+                if ((jogoVelha[0][0]== 'x'&& jogoVelha[0][1]== 'x' && jogoVelha[0][2]=='x')|| 
+                        (jogoVelha[1][0]== 'x'&& jogoVelha[1][1]== 'x' && jogoVelha[1][2]=='x')
+                        || (jogoVelha[2][0]== 'x'&& jogoVelha[2][1]== 'x' && jogoVelha[2][2]=='x')
+                         || (jogoVelha[0][0]== 'x'&& jogoVelha[1][0]== 'x' && jogoVelha[2][0]=='x')
+                         || (jogoVelha[0][1]== 'x'&& jogoVelha[1][1]== 'x' && jogoVelha[2][1]=='x')
+                         || (jogoVelha[0][2]== 'x'&& jogoVelha[1][2]== 'x' && jogoVelha[2][2]=='x')
+                         || (jogoVelha[0][0]== 'x'&& jogoVelha[1][1]== 'x' && jogoVelha[2][2]=='x')
+                         || (jogoVelha[2][0]== 'x'&& jogoVelha[1][1]== 'x' && jogoVelha[0][2]=='x')){
+                    
+                    ganhou=true;
+                    System.out.println("Parabé jogador 1 ganhou ");
+                }else{
+                    
+                     if ((jogoVelha[0][0]== 'o'&& jogoVelha[0][1]== 'o' && jogoVelha[0][2]=='o')|| 
+                        (jogoVelha[1][0]== 'o'&& jogoVelha[1][1]== 'o' && jogoVelha[1][2]=='o')
+                        || (jogoVelha[2][0]== 'o'&& jogoVelha[2][1]== 'o' && jogoVelha[2][2]=='o')
+                         || (jogoVelha[0][0]== 'o'&& jogoVelha[1][0]== 'o' && jogoVelha[2][0]=='o')
+                         || (jogoVelha[0][1]== 'o'&& jogoVelha[1][1]== 'o' && jogoVelha[2][1]=='o')
+                         || (jogoVelha[0][2]== 'o'&& jogoVelha[1][2]== 'o' && jogoVelha[2][2]=='o')
+                         || (jogoVelha[0][0]== 'o'&& jogoVelha[1][1]== 'o' && jogoVelha[2][2]=='o')
+                         || (jogoVelha[2][0]== 'o'&& jogoVelha[1][1]== 'o' && jogoVelha[0][2]=='o')){
+                    
+                    ganhou=true;
+                    System.out.println("Parabé jogador 2 ganhou ");
+                    
+                }else if (jogada>9){
+                    
+                    ganhou=true;
+                         System.out.println("ninguem ganhou essa partida ");
+                }
+                }
             }
     }
     
