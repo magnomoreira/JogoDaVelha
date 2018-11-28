@@ -53,10 +53,23 @@ public class Jogo {
                     }
                     
                 }
-                
+                linha--;
+                coluna--;
                 if (jogoVelha[linha][coluna]=='x'|| jogoVelha[linha][coluna]=='0'){
+                    System.out.println("posição ja usada, tente novamente ");
+            }  else{
+                    jogoVelha [linha][coluna]= sinal;
+                    jogada++;
+                }
+                // imprimir tabuleiro
+                for (int i=0;i<jogoVelha.length;i++){
+                    for(int j=0;j<jogoVelha[i].length;j++){
+                        System.out.println(jogoVelha[i][j]+"");
+                    }
+                    System.out.println();
+                    
+                }
                 
-            }
             }
     }
     
